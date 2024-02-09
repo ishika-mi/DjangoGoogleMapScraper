@@ -1,7 +1,7 @@
-
 import csv
 from django.http import HttpResponse
 from django.shortcuts import redirect, render
+from django.urls import reverse
 from .models import LocationDetails
 
 from .scraping.main import start_scraper
@@ -13,28 +13,29 @@ class HomeService:
         self.request = request
 
     def get_home_page(self):
-        return render(self.request, 'home.html', {'enable_download_button': False})
+        return render(self.request, 'home.html')
 
     def home_page_scrap_data(self):
         search_text = self.request.POST.get('search_text', '')
         clear_logs()
         start_scraper(search_text)
-        return render(self.request, 'home.html', {'enable_download_button': True, 'search_text': search_text})
+        return redirect('download', search_text)
     
 class DownloadCSVService:
-    def __init__(self, request):
+    def __init__(self, request, kwargs):
         self.request = request
+        self.kwargs =  kwargs
 
     def redirect_download(self):
-        return redirect()
+        return render(self.request, 'download.html', context={"search_text":self.kwargs.get("search_text")})
     
     def download_csv(self):
-        if self.request.POST.get('get_search_value'):
-            location_details = LocationDetails.objects.filter(search_text = self.request.POST.get('get_search_value'))
+        if self.kwargs.get('search_text'):
+            location_details = LocationDetails.objects.filter(search_text = self.kwargs.get('search_text'))
         else:
             location_details = LocationDetails.objects.all()
         response = HttpResponse(content_type='text/csv')
-        filename = self.request.POST.get('get_search_value').replace(" ","_")
+        filename = self.kwargs.get('search_text', "").replace(" ","_")
         response['Content-Disposition'] = f'attachment; filename="{filename}_location_details.csv"'
 
         writer = csv.writer(response)

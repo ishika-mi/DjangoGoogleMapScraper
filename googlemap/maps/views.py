@@ -15,7 +15,7 @@ class Home(View):
     
 @method_decorator(csrf_exempt, name="dispatch")
 class DownloadCSV(View):
-    def get(self,request):
-        return DownloadCSVService(request).redirect_download()
-    def post(self,request):
-        return DownloadCSVService(request).download_csv()
+    def get(self,request, **kwargs):
+        return DownloadCSVService(request, kwargs).redirect_download()
+    def post(self,request, **kwargs):
+        return DownloadCSVService(request, kwargs).download_csv()

@@ -39,4 +39,23 @@ Web Scraping with Selenium allows you to gather all the required data using Sele
 3. Run website
     ```bash  
     cd googlemap
+    python3 manage.py makemigrations
+    python3 manage.py migrate
     python3 manage.py runserver
+
+## Steps for Database Setup
+1. Before running any postgresql commands we need to switch user to postgres:
+    ```bash
+    sudo -u postgres psql
+2. Create Database
+    ```bash
+   CREATE DATABASE <DATABASE_NAME>;
+3. Create User
+   ```bash
+   CREATE USER <USERNAME> WITH PASSWORD '<PASSWORD>';
+4. Grant Database privileges to User
+    ```bash  
+    GRANT ALL PRIVILEGES ON DATABASE <DATABASE_NAME> to <USERNAME>;
+5. Exit
+    ```bash
+    \q

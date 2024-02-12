@@ -25,17 +25,17 @@ And That's it!!!!! You will be having location details for your desired place in
 
 #### Features
 
-- Batteries-Included: Django comes with a variety of built-in features for web development, such as an ORM (Object-Relational Mapper), authentication system, URL routing, template engine, and more.
+- **Batteries-Included:** Django comes with a variety of built-in features for web development, such as an ORM (Object-Relational Mapper), authentication system, URL routing, template engine, and more.
 
-- Admin Interface: Django provides a powerful admin interface out-of-the-box, which allows developers to manage application data through a web-based interface without writing custom code.
+- **Admin Interface:** Django provides a powerful admin interface out-of-the-box, which allows developers to manage application data through a web-based interface without writing custom code.
 
-- Security: Django helps developers avoid many common security mistakes by providing built-in protection against XSS, CSRF, SQL injection, and clickjacking.
+- **Security:** Django helps developers avoid many common security mistakes by providing built-in protection against XSS, CSRF, SQL injection, and clickjacking.
 
-- Scalability: Django applications can scale well both vertically and horizontally. With proper architecture and optimization, Django can handle heavy traffic loads.
+- **Scalability:** Django applications can scale well both vertically and horizontally. With proper architecture and optimization, Django can handle heavy traffic loads.
 
-- Versatility: Django is suitable for building different types of web applications, including content management systems (CMS), social networks, e-commerce platforms, and more.
+- **Versatility:** Django is suitable for building different types of web applications, including content management systems (CMS), social networks, e-commerce platforms, and more.
 
-- Community and Ecosystem: Django has a large and active community of developers, which means plenty of resources, packages, and third-party integrations are available.
+- **Community and Ecosystem:** Django has a large and active community of developers, which means plenty of resources, packages, and third-party integrations are available.
 
 #### Getting Started with Django
 - **Installation:** You can install Django using pip, Python's package manager:
@@ -51,6 +51,9 @@ And That's it!!!!! You will be having location details for your desired place in
 - **Creating Apps:** Django projects are composed of one or more apps. You can create a new app within your project using the following command:
     ```bash
     python manage.py startapp myapp
+
+For more information you can check Django documentation:
+ https://www.djangoproject.com/ 
 ### Selenium
 *For Scraping Process*
 

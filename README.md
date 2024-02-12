@@ -20,8 +20,37 @@ And That's it!!!!! You will be having location details for your desired place in
 ### Django
 *For developing website(both frontend and backend)*
 
-Django is a free and open-source, Python-based web framework that runs on a web server. It follows the model–template–views architectural pattern.
+- Django is a high-level Python web framework that encourages rapid development and clean, pragmatic design. Built by experienced developers, it takes care of much of the hassle of web development, so you can focus on writing your app without needing to reinvent the wheel. 
+- It’s free and open source. It follows the model-view-template (MVT) architectural pattern. Django aims to make it easier to build web applications by providing reusable components and a robust development environment.
 
+#### Features
+
+- Batteries-Included: Django comes with a variety of built-in features for web development, such as an ORM (Object-Relational Mapper), authentication system, URL routing, template engine, and more.
+
+- Admin Interface: Django provides a powerful admin interface out-of-the-box, which allows developers to manage application data through a web-based interface without writing custom code.
+
+- Security: Django helps developers avoid many common security mistakes by providing built-in protection against XSS, CSRF, SQL injection, and clickjacking.
+
+- Scalability: Django applications can scale well both vertically and horizontally. With proper architecture and optimization, Django can handle heavy traffic loads.
+
+- Versatility: Django is suitable for building different types of web applications, including content management systems (CMS), social networks, e-commerce platforms, and more.
+
+- Community and Ecosystem: Django has a large and active community of developers, which means plenty of resources, packages, and third-party integrations are available.
+
+#### Getting Started with Django
+- **Installation:** You can install Django using pip, Python's package manager:
+    ```bash
+    pip install django
+- **Creating a Django Project:** Once Django is installed, you can create a new Django project using the following command:
+    ```bash
+    django-admin startproject <myproject>
+- **Running the Development Server:** You can start the Django development server using the following command. This will start the development server on http://127.0.0.1:8000/ by default:
+    ```bash
+    cd <myproject>
+    python manage.py runserver
+- **Creating Apps:** Django projects are composed of one or more apps. You can create a new app within your project using the following command:
+    ```bash
+    python manage.py startapp myapp
 ### Selenium
 *For Scraping Process*
 

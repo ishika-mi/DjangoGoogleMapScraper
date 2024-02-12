@@ -1,5 +1,7 @@
+import os
 import psycopg2
 import logging
+from dotenv import load_dotenv
 
 logging.basicConfig(filename='maps/info.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
@@ -7,11 +9,11 @@ logging.basicConfig(filename='maps/info.log', level=logging.INFO, format='%(asct
 def create_connection():
     try:
         connection = psycopg2.connect(
-            user="postgres",
-            password="postgres",
-            host="localhost",
-            port=5432,
-            database="mapscraper"
+            user=os.environ.get('DATABASE_USER'),
+            password= os.environ.get('DATABASE_PASSWORD'),
+            host=os.environ.get('DATABASE_HOST'),
+            port=os.environ.get('DATABASE_PORT'),
+            database=os.environ.get('DATABASE_NAME')
         )
         logging.info("Connected to PostgreSQL database successfully!")
         return connection
